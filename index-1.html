@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>First Choice Financial Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f2f4f7;}
+header{background:#0a2a5e;color:white;padding:25px;text-align:center;}
+.container{max-width:520px;background:#fff;margin:30px auto;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+h2{text-align:center;color:#0a2a5e;}
+label{font-weight:bold;font-size:14px;}
+input,select{width:100%;padding:10px;margin:8px 0 15px;border:1px solid #ccc;border-radius:6px;}
+.amount{text-align:center;font-size:18px;font-weight:bold;color:#0a2a5e;}
+button{width:100%;background:#007bff;color:white;padding:12px;border:none;border-radius:6px;font-size:16px;cursor:pointer;}
+footer{text-align:center;font-size:13px;padding:15px;color:#555;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;}
+</style>
+</head>
+
+<body>
+<header>
+<h1>First Choice Financial Services</h1>
+<p>Your Trusted Loan Partner</p>
+</header>
+
+<div class="container">
+<h2>Loan Enquiry Form</h2>
+
+<label>Full Name</label>
+<input id="name" type="text" placeholder="Enter your name">
+
+<label>Mobile Number</label>
+<input id="mobile" type="tel" placeholder="Enter mobile number">
+
+<label>Loan Type</label>
+<select id="type">
+<option>Business Loan</option>
+<option>Personal Loan</option>
+<option>Home Loan</option>
+<option>Loan Against Property</option>
+<option>Cash Credit</option>
+</select>
+
+<label>Loan Amount</label>
+<div class="amount">₹ <span id="amt">500000</span></div>
+<input type="range" min="50000" max="5000000" step="50000" value="500000"
+oninput="document.getElementById('amt').innerText=this.value">
+
+<label>Tenure</label>
+<select id="tenure">
+<option>12 Months</option>
+<option>24 Months</option>
+<option>36 Months</option>
+<option>48 Months</option>
+<option>60 Months</option>
+</select>
+
+<button onclick="sendLead()">Submit Enquiry</button>
+</div>
+
+<footer>© 2026 First Choice Financial Services</footer>
+
+<a class="whatsapp" href="https://wa.me/918871121798" target="_blank">Chat on WhatsApp</a>
+
+<script>
+function sendLead(){
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var type=document.getElementById("type").value;
+var amount=document.getElementById("amt").innerText;
+var tenure=document.getElementById("tenure").value;
+if(name==""||mobile==""){alert("Please fill required details");return;}
+var msg="📌 *New Loan Enquiry* %0A%0A"+"👤 Name: "+name+"%0A"+"📱 Mobile: "+mobile+"%0A"+"💼 Loan Type: "+type+"%0A"+"💰 Amount: ₹"+amount+"%0A"+"⏳ Tenure: "+tenure;
+window.open("https://wa.me/918871121798?text="+msg,"_blank");
+}
+</script>
+
+</body>
+</html>
